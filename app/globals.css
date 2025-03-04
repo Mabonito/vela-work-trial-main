@@ -1,0 +1,467 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base styles */
+html {
+  @apply min-h-full m-0;
+}
+body {
+  @apply tracking-wider font-thin min-h-full m-0 text-base h-screen w-screen;
+}
+
+#__next {
+  height: 100%;
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
+.table-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  overflow-x: auto;
+  white-space: nowrap;
+}
+:root {
+  --vela-darkest-blue: theme(colors.vela-darkest-blue);
+  --vela-dark-blue: theme(colors.vela-dark-blue);
+  --vela-orange: theme(colors.vela-orange);
+  --vela-grey: theme(colors.vela-grey);
+  --vela-lighter-grey: theme(colors.vela-lighter-grey);
+  --vela-white: theme(colors.vela-white);
+
+  --vela-orange: theme(colors.vela-orange);
+  --vela-light-orange: theme(colors.vela-light-orange);
+  --vela-red: theme(colors.vela-red);
+  --vela-green: theme(colors.vela-green);
+  --vela-blue: theme(colors.vela-blue);
+  --vela-lighter-blue: theme(colors.vela-lighter-blue);
+  --vela-yellow: theme(colors.vela-yellow);
+
+  --vela-light-mode-card: theme(colors.vela-light-mode-card);
+  --vela-light-mode-drawer: theme(colors.vela-light-mode-drawer);
+
+  --vela-background: theme(colors.l-background);
+  --vela-background-drawer: theme(colors.l-background-drawer);
+  --vela-background-card: theme(colors.l-background-card);
+
+  --vela-chat-bubble: theme(colors.l-chat-bubble);
+  --selected-tab: theme(colors.l-selected-tab);
+  --backgroud-tab: theme(colors.l-backgroud-tab);
+  --vela-on-chat-bubble: theme(colors.l-on-chat-bubble);
+  --vela-drawer-outline: theme(colors.l-drawer-outline);
+
+  --vela-text-color: theme(colors.l-text-color);
+
+  --vela-modal-text-color: theme(colors.l-modal-text-color);
+  --vela-modal-background: theme(colors.l-modal-background);
+}
+
+[data-theme="light"] {
+  --vela-darkest-blue: theme(colors.vela-darkest-blue);
+  --vela-dark-blue: theme(colors.vela-dark-blue);
+  --vela-orange: theme(colors.vela-orange);
+  --vela-grey: theme(colors.vela-grey);
+  --vela-lighter-grey: theme(colors.vela-lighter-grey);
+  --vela-white: theme(colors.vela-white);
+
+  --vela-orange: theme(colors.vela-orange);
+  --vela-light-orange: theme(colors.vela-light-orange);
+  --vela-red: theme(colors.vela-red);
+  --vela-green: theme(colors.vela-green);
+  --vela-blue: theme(colors.vela-blue);
+  --vela-lighter-blue: theme(colors.vela-lighter-blue);
+  --vela-yellow: theme(colors.vela-yellow);
+
+  --vela-light-mode-card: theme(colors.vela-light-mode-card);
+  --vela-light-mode-drawer: theme(colors.vela-light-mode-drawer);
+
+  --vela-background: theme(colors.l-background);
+  --vela-background-drawer: theme(colors.l-background-drawer);
+  --vela-background-card: theme(colors.l-background-card);
+
+  --vela-chat-bubble: theme(colors.l-chat-bubble);
+  --vela-on-chat-bubble: theme(colors.l-on-chat-bubble);
+  --vela-drawer-outline: theme(colors.l-drawer-outline);
+
+  --selected-tab: theme(colors.l-selected-tab);
+  --backgroud-tab: theme(colors.l-backgroud-tab);
+
+  --vela-text-color: theme(colors.l-text-color);
+
+  --vela-modal-text-color: theme(colors.l-modal-text-color);
+  --vela-modal-background: theme(colors.l-modal-background);
+}
+
+[data-theme="dark"] {
+  --vela-darkest-blue: theme(colors.vela-darkest-blue);
+  --vela-dark-blue: theme(colors.vela-dark-blue);
+  --vela-orange: theme(colors.vela-orange);
+  --vela-grey: theme(colors.vela-grey);
+  --vela-lighter-grey: theme(colors.vela-lighter-grey);
+  --vela-white: theme(colors.vela-white);
+
+  --vela-orange: theme(colors.vela-orange);
+  --vela-light-orange: theme(colors.vela-light-orange);
+  --vela-red: theme(colors.vela-red);
+  --vela-green: theme(colors.vela-green);
+  --vela-blue: theme(colors.vela-blue);
+  --vela-lighter-blue: theme(colors.vela-lighter-blue);
+  --vela-yellow: theme(colors.vela-yellow);
+
+  --vela-light-mode-card: theme(colors.vela-light-mode-card);
+  --vela-light-mode-drawer: theme(colors.vela-light-mode-drawer);
+
+  --vela-background: theme(colors.d-background);
+  --vela-background-drawer: theme(colors.d-background-drawer);
+  --vela-background-card: theme(colors.d-background-card);
+
+  --vela-chat-bubble: theme(colors.d-chat-bubble);
+  --vela-on-chat-bubble: theme(colors.d-on-chat-bubble);
+  --vela-drawer-outline: theme(colors.d-drawer-outline);
+
+  --selected-tab: theme(colors.d-selected-tab);
+  --backgroud-tab: theme(colors.d-backgroud-tab);
+
+  --vela-text-color: theme(colors.d-text-color);
+  --vela-modal-text-color: theme(colors.d-modal-text-color);
+  --vela-modal-background: theme(colors.d-modal-background);
+}
+
+.logo {
+  @apply absolute top-0 right-0;
+}
+
+.title {
+  @apply capitalize;
+}
+
+.text-floating {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.link:hover {
+  @apply underline;
+}
+
+input[type="checkbox"] {
+  @apply accent-vela-orange;
+}
+
+input[type="radio"] {
+  @apply accent-vela-orange;
+}
+
+textarea[type="text"],
+input[type="number"],
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  @apply border bg-vela-background accent-vela-orange;
+}
+
+/* button styles */
+
+button {
+  @apply px-3 py-1 
+    rounded-3xl 
+    flex justify-between items-center gap-2
+    tracking-wider
+    text-lg;
+}
+
+.btn {
+  @apply px-3 py-1 
+    rounded-3xl 
+    flex justify-between items-center gap-2
+    tracking-wider
+    text-base;
+}
+
+button:hover {
+  @apply bg-opacity-90;
+}
+
+.btn:disabled {
+  @apply opacity-60;
+}
+
+.btn:hover {
+  @apply bg-opacity-90;
+}
+.btn-primary {
+  @apply bg-vela-orange text-vela-darkest-blue;
+}
+.btn-secondary {
+  @apply border hover:bg-vela-orange hover:text-vela-darkest-blue border-vela-text-color hover:border-vela-orange;
+}
+
+/* form styles */
+form {
+  @apply py-4 px-7 
+    block 
+    mx-auto 
+    w-2/3;
+}
+form label {
+  @apply block text-sm;
+}
+
+form input,
+form textarea,
+form select {
+  @apply block
+    /* mt-1 my-4  */
+    px-2 py-1 
+    rounded-sm w-full;
+}
+form button {
+  @apply block mx-auto;
+}
+
+.highlight {
+  @apply border-2 border-vela-orange shadow-md;
+}
+
+.active-bubble {
+  @apply !text-vela-orange bg-opacity-25;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  @apply !bg-transparent !text-vela-text-color border !text-base;
+  line-height: 1em !important;
+  font-family: var(--font-archivo);
+  box-shadow: 0 0 0px 1000px var(--input) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--input) inset;
+}
+
+.loader {
+  background-color: transparent;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  z-index: 100000;
+}
+
+.loader__element {
+  border-radius: 100%;
+  border: 3px solid var(--vela-orange);
+  margin: 6px;
+}
+
+.loader__element:nth-child(1) {
+  animation: preloader 0.6s ease-in-out alternate infinite;
+}
+.loader__element:nth-child(2) {
+  animation: preloader 0.6s ease-in-out alternate 0.2s infinite;
+}
+
+.loader__element:nth-child(3) {
+  animation: preloader 0.6s ease-in-out alternate 0.4s infinite;
+}
+
+.loader__element:nth-child(4) {
+  animation: preloader 0.6s ease-in-out alternate 0.6s infinite;
+}
+
+@keyframes preloader {
+  100% {
+    transform: scale(2);
+  }
+}
+
+/* card styles */
+.card {
+  @apply bg-vela-background-card
+    shadow-sm 
+    rounded-sm 
+    py-3 px-4 my-4 
+    relative 
+    min-w-fit w-1/2;
+}
+
+.card-metrics {
+  @apply bg-vela-background-card
+    shadow-sm 
+    rounded-sm 
+    py-3 px-4 my-4 
+    relative;
+}
+
+/* Creating a box with a text
+and some stylings  */
+.customer {
+  max-width: 275px;
+  min-width: 150px;
+  text-align: left;
+  border-radius: 10px;
+  position: relative;
+  display: block;
+  margin-right: auto;
+  padding: 7px;
+  @apply text-base bg-vela-chat-bubble text-vela-on-chat-bubble;
+}
+
+/* Creates triangular tip on the
+end, for our speech bubble 
+with some styling */
+.customer:before {
+  content: "";
+  position: absolute;
+  border-left: 5px solid transparent;
+  border-right: 5px solid;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid;
+  left: -5px;
+  bottom: 3px;
+  @apply border-r-vela-chat-bubble border-b-vela-chat-bubble;
+}
+
+.agent {
+  max-width: 275px;
+  min-width: 150px;
+  text-align: left;
+  border-radius: 10px;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  padding: 7px;
+  @apply text-base  bg-vela-chat-bubble text-vela-on-chat-bubble;
+}
+
+/* Creates triangular tip on the
+end, for our speech bubble 
+with some styling */
+.agent:before {
+  content: "";
+  position: absolute;
+  border-left: 5px solid;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid;
+  right: -5px;
+  bottom: 3px;
+  @apply border-l-vela-chat-bubble border-b-vela-chat-bubble;
+}
+
+.ant-select-selection-item {
+  @apply !font-thin !text-base tracking-wider;
+}
+
+.ant-select-item-option-content {
+  @apply font-thin text-base tracking-wider;
+}
+
+.ant-tabs-nav-operations {
+  display: none !important;
+}
+
+.agent-ribbon {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+  /* height: 25px; */
+  /* width: 70px; */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.custom-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-search-input {
+  border-width: 0 !important;
+  border-bottom-width: 2px !important;
+}
+
+.icon-sun {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  /* color: #ffffff; */
+  height: 100%;
+  border-radius: 50%;
+}
+
+.icon-moon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: white; */
+  height: 100%;
+}
+
+.switch-class:hover {
+  @apply !bg-vela-orange;
+}
+
+body,
+.text-vela-text-color,
+.bg-vela-background {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.switch-class {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-sun,
+.icon-moon {
+  transition: color 0.3s ease;
+}
+
+.hoverable {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hoverable:hover {
+  @apply bg-vela-background;
+}
+
+.active-link {
+  @apply bg-vela-background;
+}
+
+@layer utilities {
+  input:-webkit-autofill {
+    background-color: theme("colors.l-background") !important;
+    color: theme("colors.l-text-color") !important;
+    -webkit-box-shadow: 0 0 0 1000px theme("colors.l-background") inset !important;
+    -webkit-text-fill-color: theme("colors.l-text-color") !important;
+    /* border: 1px solid theme("colors.l-secondary"); */
+  }
+  input:-webkit-autofill:focus {
+    /* border-color: theme("colors.l-primary") !important; */
+    -webkit-text-fill-color: theme("colors.l-text-color") !important;
+  }
+}
+
+/* customising the pop over for org limits */
+.custom-popover .ant-popover-inner {
+  box-shadow: none !important;
+  border-radius: 2rem;
+  border: 0px solid;
+  @apply !bg-vela-white;
+}
+
+.custom-popover .ant-popover-arrow {
+  display: none;
+}
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 140px;
+}
